@@ -8,21 +8,11 @@ import { Car } from './interfaces/car.interface';
 export class CarsService {
 
     private cars: Car[] = [
-        {
-            id: uuid(),
-            model: 'Cherokee',
-            brand: 'Chevrolet',
-        },
-        {
-            id:  uuid(),
-            model: 'rubicok',
-            brand: 'Jeep'
-        },
-        {
-            id:  uuid(),
-            model: 'Cruze',
-            brand: 'Chevrolet'
-        },
+        // {
+        //     id: uuid(),
+        //     model: 'Cherokee',
+        //     brand: 'Chevrolet',
+        // },
     ];
 
 
@@ -62,6 +52,12 @@ export class CarsService {
     delete(id:string) {
         const car = this.findById(id)
         this.cars = this.cars.filter(car=>car.id !== id);
+    }
+
+
+
+    fillCars(cars:Car[]){
+        this.cars = cars
     }
 
 }
